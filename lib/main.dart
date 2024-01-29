@@ -7,13 +7,24 @@ void main() {
         //backgroundColor: Color.fromARGB(255, 88, 43, 210),
         body: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 78, 24, 227),
-              Color.fromARGB(218, 84, 47, 186),
-            ]),
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 29, 11, 79),
+                Color.fromARGB(218, 12, 3, 70),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
           child: const Center(
-            child: Text('Hello NIGGAS'),
+            child: Text(
+              "What's GOOD",
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontSize:
+                    28.5, // Can be given a double that is decimal or not its our choice
+              ),
+            ),
           ),
         ),
       ),
