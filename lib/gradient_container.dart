@@ -14,6 +14,10 @@ class GradientContainer extends StatelessWidget {
   final Color color1;
   final Color color2;
 
+  void rolldice() {
+    // The body of this function
+  }
+
   @override
   Widget build(
       context) // context us nothing but the parameter that the function or method Build needs to accept
@@ -29,11 +33,18 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset(
+          child: Column(children: [
+        Image.asset(
           'assets/images/dice-2.png',
           width: 200,
-        ), // Image is a function , Can Define Multiple Constructor Function into Dart
-      ),
+        ),
+        TextButton(
+          onPressed:
+              rolldice, // WE using this approach where we define a method or a function in the functino define area and then calling it by passing a pointer using function name
+          child: const Text('Roll DICE'),
+        )
+      ]) // Image is a function , Can Define Multiple Constructor Function into Dart
+          ),
     );
   }
 }
