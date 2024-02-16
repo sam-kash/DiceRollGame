@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+
+final Randomizer = Random();
 
 class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
@@ -13,11 +16,13 @@ class DiceRoller extends StatefulWidget {
 class _DicerollerState extends State<
     DiceRoller> //_ has a meaning in Dart, It means its private and it will only be used here in this particular file only
 {
-  var activeDiceImage = 'assets/images/dice-2.png';
+  //var activeDiceImage = 'assets/images/dice-2.png';
+  var CurrentDiceRoll = 2;
 
   void rolldice() {
+    // (n) anything inside will only generate a value which is from 0 to n-1, so we need to add one
     setState(() {
-      activeDiceImage = 'assets/images/dice-4.png';
+      CurrentDiceRoll = Randomizer.nextInt(6) + 1;
     });
     // print(
     //     "Rolling it ..."); //We use it to see if the function is working or not, only the developer can actually see this
@@ -31,7 +36,7 @@ class _DicerollerState extends State<
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          activeDiceImage,
+          'assets/images/dice-$CurrentDiceRoll.png',
           width: 200,
         ),
         const SizedBox(
